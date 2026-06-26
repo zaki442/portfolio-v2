@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
@@ -19,9 +17,9 @@ export default function Hero() {
           <a href="#projects" className="bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-colors">
             View Projects
           </a>
-          <Link href="/cv_resume_v_eng.pdf" target="_blank" prefetch={false} className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium border border-zinc-600 transition-colors">
+          <a href="cv_resume_v_eng.pdf" target="_blank" className="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-lg font-medium border border-zinc-600 transition-colors">
             Download CV
-          </Link>
+          </a>
           <a href="#contact" className="border border-zinc-700 hover:border-accent text-white px-6 py-3 rounded-lg font-medium transition-colors">
             Contact Me
           </a>

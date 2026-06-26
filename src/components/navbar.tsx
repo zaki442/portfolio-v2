@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const links = [
@@ -42,14 +41,13 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <Link
-            href="/cv_resume_v_eng.pdf"
+          <a
+            href="cv_resume_v_eng.pdf"
             target="_blank"
-            prefetch={false}
             className="bg-accent hover:bg-accent/90 text-white px-3 py-1.5 rounded-md text-xs font-medium transition-colors"
           >
             Download CV
-          </Link>
+          </a>
         </div>
 
         <button
@@ -80,15 +78,14 @@ export default function Navbar() {
                 {l.label}
               </a>
             ))}
-            <Link
-              href="/cv_resume_v_eng.pdf"
+            <a
+              href="cv_resume_v_eng.pdf"
               target="_blank"
-              prefetch={false}
               onClick={() => setOpen(false)}
               className="bg-accent text-white px-3 py-1.5 rounded-md text-xs font-medium text-center transition-colors"
             >
               Download CV
-            </Link>
+            </a>
           </div>
         </div>
       )}
