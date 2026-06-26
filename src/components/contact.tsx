@@ -48,6 +48,19 @@ export default function Contact() {
           </a>
         </div>
 
+        <div className="mb-10">
+          <a
+            href="/cv_resume_v_eng.pdf"
+            target="_blank"
+            className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-white px-6 py-3 rounded-lg font-medium transition-colors"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+            </svg>
+            Download CV (PDF)
+          </a>
+        </div>
+
         <div className="border-t border-zinc-800 pt-8 text-center text-xs text-muted">
           <p>&copy; {new Date().getFullYear()} Zakaria Abid. Built with Next.js &amp; Tailwind CSS.</p>
           <p className="mt-1">
