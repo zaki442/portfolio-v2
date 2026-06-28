@@ -1,11 +1,25 @@
-export default function About() {
-  const tags = [
-    "JavaScript/TypeScript", "Angular", "React", "Next.js",
-    "Node.js Express", "Java Spring Boot", "C# .NET",
-    "Python Django", "MongoDB", "SQL NoSQL",
-    "Git Docker", "Cybersecurity",
-  ];
+const techs = [
+  { name: "JavaScript", file: "javascript.svg" },
+  { name: "TypeScript", file: "typescript.svg" },
+  { name: "Angular", file: "angular.svg" },
+  { name: "React", file: "react.svg" },
+  { name: "Next.js", file: "nextdotjs.svg" },
+  { name: "Node.js", file: "nodedotjs.svg" },
+  { name: "Express", file: "express.svg" },
+  { name: "Java", file: "openjdk.svg" },
+  { name: "Spring Boot", file: "springboot.svg" },
+  { name: "C#", file: "csharp.svg" },
+  { name: ".NET", file: "dotnet.svg" },
+  { name: "Python", file: "python.svg" },
+  { name: "Django", file: "django.svg" },
+  { name: "MongoDB", file: "mongodb.svg" },
+  { name: "SQL", file: "mysql.svg" },
+  { name: "Git", file: "git.svg" },
+  { name: "Docker", file: "docker.svg" },
+  { name: "Cybersecurity", file: "letsencrypt.svg" },
+];
 
+export default function About() {
   return (
     <section id="about" className="py-24 px-4">
       <div className="max-w-5xl mx-auto">
@@ -45,12 +59,13 @@ export default function About() {
           <div>
             <h3 className="text-sm font-semibold text-white mb-3 tracking-wider uppercase">Technologies</h3>
             <div className="flex flex-wrap gap-2">
-              {tags.map((tag) => (
+              {techs.map((t) => (
                 <span
-                  key={tag}
-                  className="px-3 py-1.5 text-xs border border-zinc-700 rounded-md text-muted hover:border-accent hover:text-accent transition-colors"
+                  key={t.name}
+                  className="inline-flex items-center gap-1.5 px-3 py-2 border border-zinc-700 rounded-md transition-colors hover:border-zinc-500"
                 >
-                  {tag}
+                  <img src={`/logos/${t.file}`} alt="" className="w-6 h-6 shrink-0" />
+                  {t.name}
                 </span>
               ))}
             </div>

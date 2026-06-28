@@ -1,44 +1,83 @@
-const skillGroups = [
+interface Skill {
+  name: string
+  file?: string
+}
+
+const skillGroups: { label: string; skills: Skill[] }[] = [
   {
     label: "Frontend",
     skills: [
-      "JavaScript / TypeScript", "Angular", "React", "Next.js",
-      "Tailwind CSS", "HTML / CSS",
+      { name: "JavaScript", file: "javascript.svg" },
+      { name: "TypeScript", file: "typescript.svg" },
+      { name: "Angular", file: "angular.svg" },
+      { name: "React", file: "react.svg" },
+      { name: "Next.js", file: "nextdotjs.svg" },
+      { name: "Tailwind CSS", file: "tailwindcss.svg" },
+      { name: "HTML", file: "html5.svg" },
+      { name: "CSS", file: "css3.svg" },
     ],
   },
   {
     label: "Backend",
     skills: [
-      "Node.js / Express", "Java / Spring Boot", "C# / .NET",
-      "Python / Django", "REST APIs", "JWT / OAuth",
+      { name: "Node.js", file: "nodedotjs.svg" },
+      { name: "Express", file: "express.svg" },
+      { name: "Java", file: "openjdk.svg" },
+      { name: "Spring Boot", file: "springboot.svg" },
+      { name: "C#", file: "csharp.svg" },
+      { name: ".NET", file: "dotnet.svg" },
+      { name: "Python", file: "python.svg" },
+      { name: "Django", file: "django.svg" },
+      { name: "REST APIs", file: "lucide-server.svg" },
+      { name: "JWT / OAuth", file: "jsonwebtokens.svg" },
     ],
   },
   {
     label: "Database & DevOps",
     skills: [
-      "MongoDB", "PostgreSQL", "MySQL", "Git / GitHub",
-      "Docker", "Linux / Bash", "CI/CD",
+      { name: "MongoDB", file: "mongodb.svg" },
+      { name: "PostgreSQL", file: "postgresql.svg" },
+      { name: "MySQL", file: "mysql.svg" },
+      { name: "Git", file: "git.svg" },
+      { name: "GitHub", file: "github.svg" },
+      { name: "Docker", file: "docker.svg" },
+      { name: "Linux", file: "linux.svg" },
+      { name: "Bash", file: "linux.svg" },
+      { name: "CI/CD", file: "githubactions.svg" },
     ],
   },
   {
     label: "AI & Data",
     skills: [
-      "Python", "TensorFlow", "LangChain", "Pandas",
-      "Machine Learning", "Kaggle", "Hugging Face",
+      { name: "Python", file: "python.svg" },
+      { name: "TensorFlow", file: "tensorflow.svg" },
+      { name: "LangChain", file: "langchain.svg" },
+      { name: "Pandas", file: "pandas.svg" },
+      { name: "scikit-learn", file: "scikitlearn.svg" },
+      { name: "Kaggle", file: "kaggle.svg" },
+      { name: "Hugging Face", file: "huggingface.svg" },
     ],
   },
   {
     label: "Cybersecurity",
     skills: [
-      "TryHackMe (Lvl 8)", "Kali Linux", "Nmap", "Wireshark",
-      "Burp Suite", "OSINT", "XSS / SQLI",
+      { name: "TryHackMe", file: "tryhackme.svg" },
+      { name: "Kali Linux", file: "kalilinux.svg" },
+      { name: "Wireshark", file: "wireshark.svg" },
+      { name: "Burp Suite", file: "burpsuite.svg" },
+      { name: "OSINT", file: "lucide-search.svg" },
+      { name: "XSS / SQLI", file: "lucide-bug.svg" },
     ],
   },
   {
     label: "Automation & Tools",
     skills: [
-      "Selenium", "Playwright", "Alpaca API", "ccxt",
-      "Backtrader", "Stripe API",
+      { name: "Selenium", file: "selenium.svg" },
+      { name: "Playwright", file: "playwright.svg" },
+      { name: "Alpaca API", file: "lucide-trending-up.svg" },
+      { name: "ccxt", file: "lucide-repeat.svg" },
+      { name: "Backtrader", file: "lucide-line-chart.svg" },
+      { name: "Stripe", file: "stripe.svg" },
     ],
   },
 ];
@@ -64,10 +103,11 @@ export default function Skills() {
               <div className="flex flex-wrap gap-1.5">
                 {group.skills.map((s) => (
                   <span
-                    key={s}
-                    className="px-2.5 py-1 text-xs border border-zinc-700 rounded-md text-muted hover:border-accent hover:text-accent transition-colors"
+                    key={s.name}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 text-xs border border-zinc-700 rounded-md text-muted hover:border-accent hover:text-accent transition-colors"
                   >
-                    {s}
+                    {s.file && <img src={`/logos/${s.file}`} alt="" className="w-4 h-4 shrink-0" />}
+                    {s.name}
                   </span>
                 ))}
               </div>
